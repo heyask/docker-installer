@@ -34,7 +34,9 @@ if ! [ -x "$(command -v docker)" ]; then
     sudo usermod -aG docker $USER
 
     # test
-    sudo docker run hello-world
+    docker run hello-world
+
+    sleep 5
 else
     echo '- docker is already installed. skip.' >&2
 fi
@@ -50,3 +52,4 @@ fi
 
 
 echo '- complete!'
+echo '- you have to reboot to run docker without "sudo"'
